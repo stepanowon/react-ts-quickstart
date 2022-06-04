@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>두번째 React App</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        var Title = function(props) {
+            return(
+                <div>
+                    <h2>{props.title}</h2>
+                    <hr />
+                </div>
+            )
+        }
+
+        var TodoList = function(props) {
+            var todolist = props.todos.map((item, index) => {
+                let status = ''
+                if (item.done == true)  status ='완료'
+                else status = '진행중'
+                return (<li key={item.id}>{item.todo} - {status}</li>)
+            });
+
+            return (
+                <ul>{todolist}</ul>
+            );
+        }
+
+		var App = function() {
+			var data = {
+				title : '해야할 일 목록',
+				todos : [
+					{ id:1, todo:"리액트 공부", done:false },
+					{ id:2, todo:"Typescript 정리", done:true },
+					{ id:3, todo:"styled components 학습", done:true },
+					{ id:4, todo:"명상", done:false }
+				]
+			}
+
+			return (        
+				<div>
+					{ Title(data) }
+					<TodoList todos={data.todos} />
+				</div>
+			);
+		}
+
+        ReactDOM.render(<App />, document.getElementById('app') );
+    </script>
+</body>
+</html>
