@@ -18,7 +18,7 @@ const Player = (props: Props) => {
   useEffect(() => {
     const id = params.id ? parseInt(params.id, 10) : 0;
     //const song = props.songs.find((song) => song.id === id);
-    let song = songs.find((song) => song.id === id);
+    const song = songs.find((song) => song.id === id);
 
     if (song) {
       setTitle(song?.title ? song.title : "");
