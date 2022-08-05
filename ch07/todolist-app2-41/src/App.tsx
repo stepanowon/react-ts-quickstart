@@ -14,7 +14,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className="boxStyle">
       <input type="text" value={todo} onChange={(e) => setTodo(e.target.value)} />
       <button onClick={() => addTodo(todo)}>Add Todo</button>
       <br />
