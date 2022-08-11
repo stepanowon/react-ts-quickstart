@@ -49,6 +49,9 @@
             <li>
                 <a href="#a7" onclick=$("#menu-close").click();>GET /todolist/:owner/create</a>
             </li>
+            <li>
+                <a href="#a8" onclick=$("#menu-close").click();>GET /users/:id</a>
+            </li>
         </ul>
     </nav>
 
@@ -95,10 +98,10 @@
                         <div>- 응답데이터 형식</div>
                         <pre>
 [
-    { "no":1572093093429,"todo":"야구장","desc":"프로야구 경기도 봐야합니다.","done":false},
-    { "no":1572093093428,"todo":"놀기","desc":"노는 것도 중요합니다.","done":false},
-    { "no":1572093093427,"todo":"Vue 학습","desc":"Vue 학습을 해야 합니다","done":false},
-    { "no":123456789,"todo":"ES6 공부","desc":"ES6공부를 해야 합니다","done":false}
+    { "id":1572093093429,"todo":"야구장","desc":"프로야구 경기도 봐야합니다.","done":false},
+    { "id":1572093093428,"todo":"놀기","desc":"노는 것도 중요합니다.","done":false},
+    { "id":1572093093427,"todo":"Vue 학습","desc":"Vue 학습을 해야 합니다","done":false},
+    { "id":123456789,"todo":"ES6 공부","desc":"ES6공부를 해야 합니다","done":false}
 ]</pre>
                     </p>
                 </div>
@@ -134,7 +137,7 @@
                         <div>- 응답데이터 형식</div>
                         <pre>
 {
-    "no":123456789,
+    "id":123456789,
     "todo":"ES6 공부",
     "desc":"ES6 공부는 필수. 10.22까지."
     "done":false
@@ -181,7 +184,7 @@
     "status": "success",
     "message": "추가 성공",
     "item": {
-        "no": 1572093337388,
+        "id": 1572093337388,
         "todo": "React학습",
         "desc": "Redux까지 마무리! (10.23까지)"
     }
@@ -236,7 +239,7 @@
     "status": "success",
     "message": "할일 변경 성공",
     "item": {
-        "no": 1572093337388,
+        "id": 1572093337388,
         "todo": "React학습!!",
         "desc": "Redux까지 마무리! (11.23까지)",
         "done": true
@@ -285,7 +288,7 @@
     "status": "success",
     "message": "완료 변경 성공",
     "item": {
-        "no": 1572093337388,
+        "id": 1572093337388,
         "todo": "React학습!!",
         "done": true
     }
@@ -329,7 +332,7 @@
     "status": "success",
     "message": "삭제 성공",
     "item": {
-        "no": 1572093337388,
+        "id": 1572093337388,
         "todo": "React학습!!"
     }
 }</pre>
@@ -378,6 +381,41 @@
 "status": "fail",
 "message": "[에러메시지]"
 }</pre>
+                    </p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <aside  id="a8" class="call-to-action bg-primary">
+        <div class="container">
+            <div class="row">
+                <h3>8. GET /users/:id</h3>
+            </div>
+        </div>
+    </aside>
+
+    <section class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-left">
+                    <p>: 사용자 정보 조회</p>
+                    <p class="lead">
+                        <div>- 전달 파라미터</div>
+                        <ul>
+                            <li>:id : 사용자 ID</li>
+                        </ul>
+                        <div>- 응답데이터 형식</div>
+                        <pre>
+{
+   id: "1",
+   userid: "gdhong",
+   username: "홍길동"
+}</pre>
+                        <div>** 응답 데이터는 ID만 바뀔뿐 항상 홍길동을 리턴합니다.</div>
+                        <div>** 3초의 지연시간 후 응답합니다.</div>
                     </p>
                 </div>
             </div>

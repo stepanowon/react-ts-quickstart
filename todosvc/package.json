@@ -29,5 +29,8 @@
     "rotating-file-stream": "^3.0.4",
     "shortid": "^2.2.16",
     "sleep-promise": "^9.1.0"
+  },
+  "engines" : { 
+    "node" : ">=16.0.0" 
   }
 }

@@ -12,14 +12,25 @@ var _sleepPromise = _interopRequireDefault(require("sleep-promise"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var _default = function _default(app) {
-  app.get('/', function (req, res) {
+  app.get("/", function (req, res) {
     console.log("### GET /");
-    res.render('index', {
-      title: 'todolist 서비스 v1.0',
-      subtitle: '(node.js + express + lokijs)'
+    res.render("index", {
+      title: "todolist 서비스 v1.0",
+      subtitle: "(node.js + express + lokijs)"
     });
   });
-  app.get('/todolist/:owner/create', function (req, res) {
+  app.get("/users/:id", function (req, res) {
+    console.log("### GET /users/:id");
+    var id = req.params.id;
+    (0, _sleepPromise["default"])(3000).then(function () {
+      res.json({
+        id: id,
+        userid: "gdhong",
+        username: "홍길동"
+      });
+    });
+  });
+  app.get("/todolist/:owner/create", function (req, res) {
     console.log("### GET /todolist/:owner/create");
     var owner = req.params.owner;
     var result = (0, _tododao.createNewOwner)({
@@ -27,7 +38,7 @@ var _default = function _default(app) {
     });
     res.json(result);
   });
-  app.get('/todolist/:owner', function (req, res) {
+  app.get("/todolist/:owner", function (req, res) {
     console.log("### GET /todolist/:owner");
     var owner = req.params.owner;
     var todolist = (0, _tododao.getTodoList)({
@@ -35,7 +46,7 @@ var _default = function _default(app) {
     });
     res.json(todolist);
   });
-  app.get('/todolist_long/:owner', function (req, res) {
+  app.get("/todolist_long/:owner", function (req, res) {
     console.log("### GET /todolist_long/:owner");
     (0, _sleepPromise["default"])(1000).then(function () {
       var owner = req.params.owner;
@@ -45,7 +56,7 @@ var _default = function _default(app) {
       res.json(todolist);
     });
   });
-  app.get('/todolist/:owner/:id', function (req, res) {
+  app.get("/todolist/:owner/:id", function (req, res) {
     console.log("### GET /todolist/:owner/:id");
     var _req$params = req.params,
         owner = _req$params.owner,
@@ -56,7 +67,7 @@ var _default = function _default(app) {
     });
     res.json(todoitem);
   });
-  app.get('/todolist_long/:owner/:id', function (req, res) {
+  app.get("/todolist_long/:owner/:id", function (req, res) {
     console.log("### GET /todolist_long/:owner/:id");
     (0, _sleepPromise["default"])(1000).then(function () {
       var _req$params2 = req.params,
@@ -69,7 +80,7 @@ var _default = function _default(app) {
       res.json(todoitem);
     });
   });
-  app.post('/todolist/:owner', function (req, res) {
+  app.post("/todolist/:owner", function (req, res) {
     console.log("### POST /todolist/:owner");
     var owner = req.params.owner;
     var _req$body = req.body,
@@ -82,7 +93,7 @@ var _default = function _default(app) {
     });
     res.json(result);
   });
-  app.post('/todolist_long/:owner', function (req, res) {
+  app.post("/todolist_long/:owner", function (req, res) {
     console.log("### POST /todolist_long/:owner");
     (0, _sleepPromise["default"])(1000).then(function () {
       var owner = req.params.owner;
@@ -97,7 +108,7 @@ var _default = function _default(app) {
       res.json(result);
     });
   });
-  app.put('/todolist/:owner/:id', function (req, res) {
+  app.put("/todolist/:owner/:id", function (req, res) {
     console.log("### PUT /todolist/:owner/:id");
     var _req$params3 = req.params,
         owner = _req$params3.owner,
@@ -115,7 +126,7 @@ var _default = function _default(app) {
     });
     res.json(result);
   });
-  app.put('/todolist_long/:owner/:id', function (req, res) {
+  app.put("/todolist_long/:owner/:id", function (req, res) {
     console.log("### PUT /todolist_long/:owner/:id");
     (0, _sleepPromise["default"])(1000).then(function () {
       var _req$params4 = req.params,
@@ -135,7 +146,7 @@ var _default = function _default(app) {
       res.json(result);
     });
   });
-  app.put('/todolist/:owner/:id/done', function (req, res) {
+  app.put("/todolist/:owner/:id/done", function (req, res) {
     console.log("### PUT /todolist/:owner/:nido/done");
     var _req$params5 = req.params,
         owner = _req$params5.owner,
@@ -146,7 +157,7 @@ var _default = function _default(app) {
     });
     res.json(result);
   });
-  app.put('/todolist_long/:owner/:id/done', function (req, res) {
+  app.put("/todolist_long/:owner/:id/done", function (req, res) {
     console.log("### PUT /todolist_long/:owner/:id/done");
     (0, _sleepPromise["default"])(1000).then(function () {
       var _req$params6 = req.params,
@@ -159,7 +170,7 @@ var _default = function _default(app) {
       res.json(result);
     });
   });
-  app["delete"]('/todolist/:owner/:id', function (req, res) {
+  app["delete"]("/todolist/:owner/:id", function (req, res) {
     console.log("### DELETE /todolist/:owner/:id");
     var _req$params7 = req.params,
         owner = _req$params7.owner,
@@ -170,7 +181,7 @@ var _default = function _default(app) {
     });
     res.json(result);
   });
-  app["delete"]('/todolist_long/:owner/:id', function (req, res) {
+  app["delete"]("/todolist_long/:owner/:id", function (req, res) {
     console.log("### DELETE /todolist_long/:owner/:id");
     (0, _sleepPromise["default"])(1000).then(function () {
       var _req$params8 = req.params,
@@ -184,7 +195,7 @@ var _default = function _default(app) {
     });
   }); //----에러 처리 시작
 
-  app.get('*', function (req, res, next) {
+  app.get("*", function (req, res, next) {
     var err = new Error();
     err.status = 404;
     next(err);
