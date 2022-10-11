@@ -5,7 +5,7 @@ import Youtube from "react-youtube";
 import { SongType } from "../../App";
 
 type Props = { songs: Array<SongType> };
-type SongIdParam = { id?: string };
+type SongIdParam = { id: string };
 
 const Player = (props: Props) => {
   const params = useParams<SongIdParam>();
