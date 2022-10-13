@@ -2,7 +2,7 @@
 
 ### 원쌤의 리액트 퀵스타트 with 타입스크립트 
 
-<img src="cover-react-ts-quickstart.png" data-canonical-src="cover_vuejs_quickstart.png" />
+<img src="cover-react-ts-quickstart.png" data-canonical-src="cover_vuejs_quickstart.png" width="600" />
 
 ---
 
