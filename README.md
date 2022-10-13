@@ -1,6 +1,6 @@
 # react-ts-quickstart
 
-### 타입스크립트를 이용한 React 집필 서적 예제
+### 원쌤의 리액트 퀵스타트 with 타입스크립트 
 
 <img src="cover-react-ts-quickstart.jpg" data-canonical-src="cover_vuejs_quickstart.png" width="400" />
 
