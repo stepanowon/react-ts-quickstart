@@ -2,7 +2,7 @@
 
 ### 타입스크립트를 이용한 React 집필 서적 예제
 
-<img src="cover-react-ts-quickstart.jpg" data-canonical-src="cover_vuejs_quickstart.png" width="300" />
+<img src="cover-react-ts-quickstart.jpg" data-canonical-src="cover_vuejs_quickstart.png" width="400" />
 
 ---
 
