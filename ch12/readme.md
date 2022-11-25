@@ -7,9 +7,12 @@
 - 예 : 마지막 숫자가 6이라면 6절을 뜻합니다.
 
 ### todolist-app-router-slice35-appdx 폴더
+
 - 12.3.5에서 다루지 않았던 createSlice를 적용한 예제
-  * createAction, createReducer 기능을 createSlice 하나로 제공
+  - createAction, createReducer 기능을 createSlice 하나로 제공
+
 ```
+//TodoSlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export type TodoItemType = {
