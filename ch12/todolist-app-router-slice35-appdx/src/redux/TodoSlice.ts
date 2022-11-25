@@ -1,15 +1,3 @@
-# 12장 예제
-
----
-
-### 폴더명의 숫자는 절을 의미합니다.
-
-- 예 : 마지막 숫자가 6이라면 6절을 뜻합니다.
-
-### todolist-app-router-slice35-appdx 폴더
-- 12.3.5에서 다루지 않았던 createSlice를 적용한 예제
-  * createAction, createReducer 기능을 createSlice 하나로 제공
-```
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export type TodoItemType = {
@@ -60,4 +48,3 @@ const TodoReducer = TodoSlice.reducer;
 const TodoActionCreator = TodoSlice.actions;
 
 export { TodoActionCreator, TodoReducer };
-```
